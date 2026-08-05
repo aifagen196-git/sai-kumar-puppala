@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sai Kumar Puppala — Network Engineer with 6+ years in enterprise routing & switching, network security, hybrid cloud networking, and network automation across data center and corporate environments." />
+  <meta name="author" content="Sai Kumar Puppala" />
+  <meta name="theme-color" content="#0c4a6e" />
+  <title>Sai Kumar Puppala — Network Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --grad-a:#0c4a6e; --grad-b:#0284c7;
+      --accent:#0284c7; --accent-2:#0369a1; --accent-deep:#0369a1;
+      --head:#0f1b24; --body:#4d6270; --line:#e1eaf0;
+      --card:#fff; --soft:#e8f6fd; --bg:#ffffff; --chip:#f5f9fb; --hover-line:#bfe2f3; --shadow:10,50,70;
+      --display:'Sora',system-ui,sans-serif; --text:'Inter',system-ui,sans-serif;
+      --t:.35s cubic-bezier(.4,0,.2,1);
+    }
+    [data-theme="dark"]{
+      --accent:#38bdf8; --accent-2:#7dd3fc; --accent-deep:#bae6fd;
+      --head:#eaf4fa; --body:#9db2bf; --line:rgba(150,180,192,.16);
+      --card:#0f1c24; --soft:rgba(56,189,248,.12); --bg:#081319; --chip:#0f1f27; --hover-line:rgba(56,189,248,.4); --shadow:0,0,0;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;scroll-padding-top:20px;}
+    body{font-family:var(--text);color:var(--body);line-height:1.6;background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background var(--t),color var(--t);}
+    a{color:inherit;text-decoration:none;}
+    h1,h2,h3,h4{font-family:var(--display);color:var(--head);line-height:1.2;}
+    ::selection{background:var(--accent);color:#fff;}
+
+    #hero{position:relative;min-height:100vh;width:100%;background:linear-gradient(125deg,var(--grad-a),var(--grad-b));display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+    #net{position:absolute;inset:0;z-index:0;}
+    .header{position:relative;z-index:2;color:#fff;font-family:var(--display);width:88%;max-width:1000px;}
+    .site-title{display:block;line-height:1;color:#fff;font-weight:700;letter-spacing:.01em;font-size:clamp(2.1rem,7.4vw,5.2rem);}
+    .site-description{display:block;line-height:1.25;color:#eceafe;margin-top:16px;font-weight:500;font-size:clamp(.98rem,3vw,1.7rem);}
+    .header-icons{display:flex;justify-content:center;gap:14px;margin:30px 0 6px;}
+    .header-icons a{width:46px;height:46px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;color:#fff;transition:var(--t);background:rgba(255,255,255,.06);}
+    .header-icons a:hover{background:#fff;color:var(--accent);transform:translateY(-3px);}
+    .header-icons svg{width:21px;height:21px;}
+    .header-links{margin-top:18px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
+    .header-links .link{color:#fff;font-weight:600;font-size:1.02rem;position:relative;padding-bottom:3px;opacity:.92;transition:var(--t);}
+    .header-links .link::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:#fff;transition:var(--t);}
+    .header-links .link:hover{opacity:1;}
+    .header-links .link:hover::after{width:100%;}
+    .down{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;animation:bob 1.6s ease-in-out infinite;}
+    .down svg{width:30px;height:30px;}
+    @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,9px);}}
+
+    .section{width:90%;max-width:980px;margin:0 auto;padding:84px 0 0;}
+    .section-head{text-align:center;margin-bottom:40px;}
+    .section-head h1{font-size:clamp(1.7rem,5vw,2.5rem);font-weight:700;}
+    .section-head .rule{width:64px;height:4px;background:linear-gradient(90deg,var(--grad-a),var(--grad-b));border-radius:4px;margin:14px auto 0;}
+    .section-head .sub{margin-top:14px;color:var(--body);font-size:1.04rem;max-width:660px;margin-left:auto;margin-right:auto;}
+
+    .about-intro{text-align:center;max-width:820px;margin:0 auto;}
+    .about-intro p{font-size:1.08rem;color:var(--body);}
+    .about-intro p strong{color:var(--head);font-weight:700;}
+    .about-intro .open{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:8px 18px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-weight:700;color:var(--accent-2);font-size:.92rem;}
+    .about-intro .open .dot{width:9px;height:9px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5);}50%{box-shadow:0 0 0 7px rgba(16,185,129,0);}}
+
+    /* SKILLS — chip category cards */
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+    .skill-cat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 24px;transition:var(--t);box-shadow:0 6px 20px rgba(var(--shadow),.05);}
+    .skill-cat:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(var(--shadow),.11);border-color:var(--hover-line);}
+    .skill-cat .head{display:flex;align-items:center;gap:11px;margin-bottom:15px;}
+    .skill-cat .ic{width:38px;height:38px;border-radius:10px;background:var(--soft);color:var(--accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+    .skill-cat .ic svg{width:20px;height:20px;}
+    .skill-cat h3{font-family:var(--display);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--head);}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;}
+    .chip{font-size:.78rem;color:var(--head);padding:6px 11px;border-radius:999px;background:var(--chip);border:1px solid var(--line);transition:var(--t);}
+    .chip:hover{border-color:var(--accent);color:var(--accent);}
+
+    .xp{display:grid;gap:22px;}
+    .job{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;padding:26px 28px;transition:var(--t);box-shadow:0 6px 20px rgba(var(--shadow),.05);}
+    .job:hover{transform:translateX(4px);box-shadow:0 14px 30px rgba(var(--shadow),.12);}
+    .job-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:3px;}
+    .job-role{font-family:var(--display);font-size:1.16rem;font-weight:600;color:var(--head);}
+    .job-co{color:var(--accent);}
+    .job-meta{font-size:.86rem;color:var(--body);font-weight:700;white-space:nowrap;}
+    .job-loc{font-size:.82rem;color:#8488a0;margin-bottom:15px;}
+    .job ul{list-style:none;display:grid;gap:10px;}
+    .job li{position:relative;padding-left:22px;font-size:.95rem;color:var(--body);line-height:1.55;}
+    .job li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg);}
+    .job li b{color:var(--accent-deep);font-weight:800;}
+
+    .proj{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;padding:28px 30px;margin:22px 0;transition:var(--t);box-shadow:0 6px 20px rgba(var(--shadow),.05);}
+    .proj:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(var(--shadow),.13);border-color:var(--hover-line);}
+    .proj h3{font-family:var(--display);font-size:1.28rem;font-weight:600;color:var(--head);margin-bottom:12px;}
+    .proj p{font-size:.95rem;color:var(--body);line-height:1.6;margin-bottom:16px;}
+    .tech-tags{display:flex;flex-wrap:wrap;gap:8px;}
+    .ttag{font-size:.74rem;font-weight:700;color:var(--accent);padding:5px 11px;border-radius:999px;background:var(--soft);border:1px solid var(--line);}
+
+    .grid2{display:grid;grid-template-columns:1fr;gap:22px;}
+    .ed{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;display:flex;gap:18px;align-items:center;transition:var(--t);box-shadow:0 6px 20px rgba(var(--shadow),.05);}
+    .ed:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(var(--shadow),.12);border-color:var(--hover-line);}
+    .ed .ic{width:50px;height:50px;flex:0 0 auto;border-radius:13px;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));color:#fff;display:flex;align-items:center;justify-content:center;}
+    .ed .ic svg{width:25px;height:25px;}
+    .ed .deg{font-family:var(--display);font-weight:600;color:var(--head);font-size:1.04rem;}
+    .ed .sch{font-size:.92rem;color:var(--body);margin-top:4px;}
+    .ed .when{font-size:.82rem;color:var(--accent);font-weight:700;margin-top:6px;}
+
+    .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .cert{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px;text-align:center;transition:var(--t);box-shadow:0 6px 20px rgba(var(--shadow),.05);}
+    .cert:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(var(--shadow),.12);border-color:var(--hover-line);}
+    .cert .ic{width:46px;height:46px;margin:0 auto 12px;border-radius:12px;background:var(--soft);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+    .cert .ic svg{width:23px;height:23px;}
+    .cert .name{font-family:var(--display);font-weight:600;color:var(--head);font-size:.95rem;}
+
+    .footer{margin-top:88px;background:linear-gradient(125deg,var(--grad-a),var(--grad-b));color:#fff;text-align:center;padding:36px 20px;}
+    .footer .fic{display:flex;gap:14px;justify-content:center;margin-bottom:14px;}
+    .footer .fic a{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;color:#fff;transition:var(--t);}
+    .footer .fic a:hover{background:#fff;color:var(--accent);}
+    .footer .fic svg{width:18px;height:18px;}
+    .footer p{font-size:.86rem;color:#eceafe;}
+    .footer .contact{font-size:.82rem;color:#d7d5fb;margin-top:6px;}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.in{opacity:1;transform:none;}
+
+    @media (max-width:820px){ .skills-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} }
+    @media (max-width:680px){ .job-head{gap:5px;} }
+    @media (prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto !important;}
+      .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+      .down,.about-intro .open .dot{animation:none;}
+    }
+    a:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:6px;}
+    .section a:focus-visible{outline-color:var(--accent);}
+
+    .theme-toggle{position:fixed;top:18px;right:18px;z-index:60;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--t);}
+    .theme-toggle:hover{transform:translateY(-2px) rotate(-12deg);border-color:#fff;}
+    .theme-toggle svg{width:20px;height:20px;}
+    .theme-toggle .moon{display:none;}
+    [data-theme="dark"] .theme-toggle{border-color:var(--line);background:var(--card);color:var(--accent);}
+    [data-theme="dark"] .theme-toggle .sun{display:none;}
+    [data-theme="dark"] .theme-toggle .moon{display:block;}
+    body.scrolled .theme-toggle{border-color:var(--line);background:var(--card);color:var(--accent);box-shadow:0 4px 14px rgba(var(--shadow),.12);}
+
+    /* Mobile hamburger nav (extra, beside theme toggle) */
+    .nav-burger{display:none;position:fixed;top:18px;right:72px;z-index:60;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;transition:var(--t);}
+    .nav-burger span{display:block;width:20px;height:2px;background:#fff;transition:var(--t);}
+    body.scrolled .nav-burger{border-color:var(--line);background:var(--card);}
+    body.scrolled .nav-burger span{background:var(--head);}
+    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-burger.open span:nth-child(2){opacity:0;}
+    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:70px;right:18px;z-index:59;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px rgba(var(--shadow),.25);flex-direction:column;padding:10px;min-width:180px;opacity:0;transform:translateY(-10px) scale(.96);pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
+    .mobile-nav.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+    .mobile-nav a{color:var(--head);font-family:var(--display);font-weight:600;font-size:.94rem;padding:12px 14px;border-radius:8px;transition:background var(--t);}
+    .mobile-nav a:hover{background:var(--soft);color:var(--accent);}
+    @media (max-width:640px){
+      .header-links{display:none;}
+      .nav-burger{display:flex;}
+      .mobile-nav{display:flex;}
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark / light mode">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+  </button>
+
+  <button class="nav-burger" id="navBurger" aria-label="Open navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="header">
+      <h1>
+        <span class="site-title">SAI KUMAR PUPPALA</span>
+        <span class="site-description">Enterprise Networking • Routing &amp; Switching • Network Security • Hybrid Cloud Networking</span>
+      </h1>
+      <div class="header-icons">
+        <a href="https://www.linkedin.com/in/sai-kumar-puppala-76631a211/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:saikumar.2585@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.93 5.49a3 3 0 01-3.14 0L1.5 8.67z"/><path d="M22.5 6.91V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.16l9.71 5.98a1.5 1.5 0 001.58 0L22.5 6.91z"/></svg>
+        </a>
+        <a href="tel:+12163153683" aria-label="Phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a14 14 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z"/></svg>
+        </a>
+      </div>
+      <nav class="header-links">
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#skills">Skills</a>
+        <a class="link" href="#experience">Experience</a>
+        <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#education">Education</a>
+        <a class="link" href="#certifications">Certifications</a>
+      </nav>
+    </div>
+    <a class="down" href="#about" aria-label="Scroll to content"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-head reveal"><h1>My Story</h1><div class="rule"></div></div>
+    <div class="about-intro reveal">
+      <p>I'm a <strong>Network Engineer</strong> with 6+ years of experience designing, implementing, monitoring, and supporting enterprise network infrastructure across data center and corporate environments. I'm experienced in <strong>Cisco routing and switching, LAN/WAN administration, network security, VPN technologies, wireless networking, firewall management, and network performance optimization</strong>. I'm skilled in troubleshooting complex Layer 2 and Layer 3 issues, configuring enterprise-grade network devices, implementing high-availability solutions, and ensuring maximum network uptime — with strong ITIL practices, infrastructure documentation, and cross-functional collaboration across cloud and security teams.</p>
+      <span class="open"><span class="dot"></span> Open to roles · USA — open to relocate</span>
+    </div>
+
+    <div id="skills" style="margin-top:52px">
+      <div class="skills-grid">
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13L6.8 17.2M12 13l5.2 4.2"/></svg></div><h3>Networking</h3></div>
+          <div class="chips"><span class="chip">TCP/IP</span><span class="chip">IPv4/IPv6</span><span class="chip">LAN</span><span class="chip">WAN</span><span class="chip">WLAN</span><span class="chip">VLAN</span><span class="chip">Inter-VLAN Routing</span><span class="chip">STP</span><span class="chip">RSTP</span><span class="chip">MSTP</span><span class="chip">VTP</span><span class="chip">EtherChannel</span><span class="chip">QoS</span><span class="chip">Multicast</span><span class="chip">Jumbo Frames</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 10v4M17 10v4"/></svg></div><h3>Routing &amp; Switching</h3></div>
+          <div class="chips"><span class="chip">Cisco IOS</span><span class="chip">Cisco Catalyst</span><span class="chip">Cisco Nexus</span><span class="chip">Layer 2 Switching</span><span class="chip">Layer 3 Switching</span><span class="chip">Static Routing</span><span class="chip">OSPF</span><span class="chip">EIGRP</span><span class="chip">BGP</span><span class="chip">Route Redistribution</span><span class="chip">Route Summarization</span><span class="chip">PBR</span><span class="chip">HSRP</span><span class="chip">VRRP</span><span class="chip">GLBP</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v6c0 4.6-3 7.9-7 9-4-1.1-7-4.4-7-9V6l7-3z"/></svg></div><h3>Network Security</h3></div>
+          <div class="chips"><span class="chip">Cisco ASA</span><span class="chip">Palo Alto Firewalls</span><span class="chip">Fortinet FortiGate</span><span class="chip">Cisco Firepower</span><span class="chip">ACLs</span><span class="chip">NAT</span><span class="chip">PAT</span><span class="chip">IPSec VPN</span><span class="chip">SSL VPN</span><span class="chip">Site-to-Site VPN</span><span class="chip">Remote Access VPN</span><span class="chip">Cisco ISE</span><span class="chip">AAA</span><span class="chip">802.1X</span><span class="chip">TACACS+</span><span class="chip">RADIUS</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 13a7 7 0 0114 0"/><path d="M2 9a11 11 0 0120 0"/><circle cx="12" cy="18" r="2"/></svg></div><h3>Wireless &amp; Network Services</h3></div>
+          <div class="chips"><span class="chip">Cisco WLC</span><span class="chip">Cisco Access Points</span><span class="chip">SSID Configuration</span><span class="chip">WPA2/WPA3</span><span class="chip">DNS</span><span class="chip">DHCP</span><span class="chip">NTP</span><span class="chip">SNMP</span><span class="chip">Syslog</span><span class="chip">NetFlow</span><span class="chip">FTP</span><span class="chip">TFTP</span><span class="chip">SSH</span><span class="chip">Telnet</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17a4 4 0 01-1-7.87A5.5 5.5 0 0116.5 8H17a4 4 0 010 8H7z"/></svg></div><h3>Cloud &amp; Virtualization</h3></div>
+          <div class="chips"><span class="chip">Azure Virtual Networks (VNet)</span><span class="chip">Azure VPN Gateway</span><span class="chip">Azure NSGs</span><span class="chip">Azure Load Balancer</span><span class="chip">VMware ESXi</span><span class="chip">VMware vSphere</span><span class="chip">Virtual Switching</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div><h3>Monitoring &amp; Troubleshooting</h3></div>
+          <div class="chips"><span class="chip">SolarWinds NPM</span><span class="chip">PRTG</span><span class="chip">Cisco Prime Infrastructure</span><span class="chip">Wireshark</span><span class="chip">Nagios</span><span class="chip">Ping</span><span class="chip">Traceroute</span><span class="chip">IP SLA</span><span class="chip">Packet Capture</span><span class="chip">Root Cause Analysis</span><span class="chip">Performance Tuning</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Data Center &amp; Infrastructure</h3></div>
+          <div class="chips"><span class="chip">Rack &amp; Stack</span><span class="chip">Structured Cabling</span><span class="chip">Fiber Optic Cabling</span><span class="chip">Patch Panels</span><span class="chip">Cross Connects</span><span class="chip">Smart Hands Support</span><span class="chip">Server Deployment</span><span class="chip">PDU Management</span><span class="chip">Cable Management</span><span class="chip">Dell PowerEdge</span><span class="chip">HPE ProLiant</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Operating Systems &amp; Tools</h3></div>
+          <div class="chips"><span class="chip">Windows Server 2016/2019/2022</span><span class="chip">RHEL</span><span class="chip">Ubuntu Linux</span><span class="chip">PuTTY</span><span class="chip">SecureCRT</span><span class="chip">WinSCP</span><span class="chip">Cisco Packet Tracer</span><span class="chip">GNS3</span><span class="chip">Microsoft Visio</span><span class="chip">Microsoft Excel</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <div class="head"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 4l6 6M3 21l3-1 11-11-2-2L4 18l-1 3z"/><path d="M12 6l6 6"/></svg></div><h3>Automation &amp; ITSM</h3></div>
+          <div class="chips"><span class="chip">PowerShell</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">REST APIs</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">ServiceNow</span><span class="chip">ITIL v4</span><span class="chip">Incident Management</span><span class="chip">Change Management</span><span class="chip">Problem Management</span><span class="chip">Asset Management</span><span class="chip">Configuration Management</span><span class="chip">SLA Compliance</span><span class="chip">SOP · MOP</span><span class="chip">HLD · LLD</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-head reveal"><h1>Experience</h1><div class="rule"></div><p class="sub">Enterprise routing, security architecture, and hybrid cloud connectivity across data center and corporate environments.</p></div>
+    <div class="xp">
+      <div class="job reveal">
+        <div class="job-head">
+          <div class="job-role">Network Engineer <span class="job-co">/ Cisco Systems</span></div>
+          <div class="job-meta">Mar 2025 — Present</div>
+        </div>
+        <div class="job-loc">USA</div>
+        <ul>
+          <li>Designed and deployed enterprise LAN, WAN, and WLAN infrastructure using Cisco Catalyst and Nexus switches, implementing VLANs, Inter-VLAN Routing, STP, RSTP, MSTP, EtherChannel, and QoS to support scalable business operations.</li>
+          <li>Configured and optimized Layer 2 and Layer 3 switching environments by implementing OSPF, BGP, Static Routing, Route Redistribution, Route Summarization, Policy-Based Routing (PBR), HSRP, VRRP, and GLBP across geographically distributed locations.</li>
+          <li>Engineered secure network architectures using Cisco ASA, Cisco Firepower, ACLs, NAT, PAT, IPSec VPN, SSL VPN, Site-to-Site VPN, Remote Access VPN, Cisco ISE, AAA, TACACS+, RADIUS, and 802.1X authentication.</li>
+          <li>Integrated Microsoft Azure Virtual Networks, Azure VPN Gateway, Azure Network Security Groups (NSGs), Azure Load Balancer, VMware ESXi, VMware vSphere, and Virtual Switching into hybrid enterprise environments.</li>
+          <li>Developed automation scripts using PowerShell, Python, Bash, and REST APIs to streamline device provisioning, configuration backups, compliance verification, and operational reporting while maintaining source control through Git and GitHub.</li>
+          <li>Produced High-Level Design (HLD), Low-Level Design (LLD), Standard Operating Procedures (SOP), Method of Procedure (MOP), and network implementation documentation supporting enterprise infrastructure projects.</li>
+          <li>Collaborated with security, cloud, and infrastructure teams to execute ITIL-based Incident Management, Change Management, Problem Management, Asset Management, and Configuration Management processes using ServiceNow.</li>
+          <li>Performed enterprise network capacity planning, hardware lifecycle assessments, and technology evaluations to recommend infrastructure enhancements aligned with future business requirements.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="job-head">
+          <div class="job-role">Network Engineer <span class="job-co">/ TCS</span></div>
+          <div class="job-meta">Jul 2021 — Jul 2023</div>
+        </div>
+        <div class="job-loc">India</div>
+        <ul>
+          <li>Implemented enterprise routing and switching solutions using Cisco IOS routers and Cisco Catalyst switches while configuring TCP/IP, IPv4/IPv6, LAN, WAN, VLAN, VTP, and Jumbo Frames across corporate branch networks.</li>
+          <li>Installed and administered Cisco Wireless LAN Controllers (WLC), Cisco Access Points, SSID configurations, WPA2/WPA3 authentication, RF optimization, and wireless client roaming services for enterprise users.</li>
+          <li>Configured core network services including DNS, DHCP, NTP, SNMP, Syslog, NetFlow, FTP, TFTP, SSH, and Telnet to support secure network communication and centralized management.</li>
+          <li>Analyzed real-time network performance metrics, bandwidth utilization, latency trends, and interface statistics using SolarWinds NPM, PRTG, Cisco Prime Infrastructure, and Wireshark to maintain infrastructure stability.</li>
+          <li>Diagnosed routing, switching, and application communication problems through structured Root Cause Analysis, traffic analysis, and Performance Tuning activities across production environments.</li>
+          <li>Coordinated firmware upgrades, IOS image installations, maintenance windows, configuration backups, and infrastructure validation while adhering to established operational procedures.</li>
+          <li>Conducted network acceptance testing for newly deployed applications by validating routing paths, service availability, firewall communication, and application traffic flow before production release.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="job-head">
+          <div class="job-role">Network Support Engineer <span class="job-co">/ HCL Technologies</span></div>
+          <div class="job-meta">Jan 2019 — Jun 2021</div>
+        </div>
+        <div class="job-loc">India</div>
+        <ul>
+          <li>Installed, configured, and maintained Cisco routers, Cisco Catalyst switches, Dell PowerEdge servers, HPE ProLiant servers, APC UPS systems, and KVM switches within enterprise data center environments.</li>
+          <li>Performed rack installation, structured cabling, fiber optic cabling, patch panel termination, cross-connect implementation, cable management, Smart Hands support, and PDU installation for new infrastructure deployments.</li>
+          <li>Supported Windows Server 2016/2019/2022, Red Hat Enterprise Linux (RHEL), and Ubuntu Linux environments by verifying network connectivity and resolving operating system-related communication issues.</li>
+          <li>Created network topology diagrams, maintained device configuration records, performed remote CLI administration, and simulated infrastructure changes using PuTTY, SecureCRT, GNS3, Cisco Packet Tracer, and Microsoft Visio.</li>
+          <li>Responded to network incidents by isolating hardware faults, replacing failed components, restoring device configurations, and coordinating vendor support for equipment replacement.</li>
+          <li>Managed network asset inventory, maintained equipment lifecycle records, updated configuration repositories, and ensured accurate documentation for audit and compliance activities.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-head reveal"><h1>Featured Projects</h1><div class="rule"></div><p class="sub">Multi-site network resiliency and secure hybrid cloud connectivity.</p></div>
+
+    <div class="proj reveal">
+      <h3>Enterprise Multi-Site Network Infrastructure Modernization</h3>
+      <p>Designed a scalable multi-site enterprise network architecture supporting redundant routing, high availability, and secure inter-branch communication. Established enterprise network resiliency by designing redundant uplinks, failover architectures, and traffic engineering strategies for uninterrupted service availability. Conducted performance validation through failover testing, latency analysis, and network optimization to ensure reliable business continuity.</p>
+      <div class="tech-tags"><span class="ttag">Cisco Catalyst</span><span class="ttag">Cisco Nexus</span><span class="ttag">OSPF</span><span class="ttag">BGP</span><span class="ttag">HSRP</span><span class="ttag">SolarWinds</span></div>
+    </div>
+
+    <div class="proj reveal">
+      <h3>Secure Hybrid Cloud Connectivity Implementation</h3>
+      <p>Implemented secure hybrid connectivity between on-premises infrastructure and Microsoft Azure using IPSec VPN and virtual networking components. Designed layered network security policies utilizing Azure Network Security Groups and Cisco firewall access rules to protect critical workloads. Validated end-to-end connectivity through packet analysis, route verification, and security testing to ensure stable hybrid cloud communication.</p>
+      <div class="tech-tags"><span class="ttag">Microsoft Azure</span><span class="ttag">VPN Gateway</span><span class="ttag">Cisco ASA</span><span class="ttag">NSGs</span><span class="ttag">Wireshark</span></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-head reveal"><h1>Education</h1><div class="rule"></div></div>
+    <div class="grid2">
+      <div class="ed reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></div>
+        <div>
+          <div class="deg">Master of Science in Information Technology</div>
+          <div class="sch">Concordia University Wisconsin, USA</div>
+          <div class="when">Jan 2024 — May 2026</div>
+        </div>
+      </div>
+      <div class="ed reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></div>
+        <div>
+          <div class="deg">Bachelor of Technology in Computer Science and Engineering</div>
+          <div class="sch">Malla Reddy College of Engineering and Technology, India</div>
+          <div class="when">Sep 2014 — Apr 2018</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section" id="certifications">
+    <div class="section-head reveal"><h1>Certifications</h1><div class="rule"></div></div>
+    <div class="cert-grid">
+      <div class="cert reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg></div>
+        <div class="name">Cisco Certified Network Professional (CCNP)</div>
+      </div>
+      <div class="cert reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg></div>
+        <div class="name">Cisco Certified Network Associate (CCNA)</div>
+      </div>
+      <div class="cert reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg></div>
+        <div class="name">Microsoft Certified: Azure Network Engineer Associate (AZ-700)</div>
+      </div>
+      <div class="cert reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-3 5 3-1.5-7.5"/></svg></div>
+        <div class="name">AWS Certified Advanced Networking – Specialty (ANS-C01)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="fic">
+      <a href="https://www.linkedin.com/in/sai-kumar-puppala-76631a211/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a href="mailto:saikumar.2585@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.93 5.49a3 3 0 01-3.14 0L1.5 8.67z"/><path d="M22.5 6.91V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.16l9.71 5.98a1.5 1.5 0 001.58 0L22.5 6.91z"/></svg></a>
+      <a href="tel:+12163153683" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a14 14 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z"/></svg></a>
+    </div>
+    <p>© <span id="yr"></span> Sai Kumar Puppala — Network Engineer</p>
+    <p class="contact">USA (Open to Relocate) · +1 (216) 315-3683 · saikumar.2585@gmail.com</p>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // theme: saved choice > system preference > light
+    (function(){
+      var root=document.documentElement, btn=document.getElementById('themeToggle');
+      var saved=null; try{ saved=localStorage.getItem('theme'); }catch(e){}
+      var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme=saved||(prefersDark?'dark':'light');
+      root.setAttribute('data-theme',theme);
+      btn.addEventListener('click',function(){
+        theme=(root.getAttribute('data-theme')==='dark')?'light':'dark';
+        root.setAttribute('data-theme',theme);
+        try{ localStorage.setItem('theme',theme); }catch(e){}
+      });
+    })();
+
+    // mobile hamburger nav
+    (function(){
+      var burger=document.getElementById('navBurger'), nav=document.getElementById('mobileNav');
+      if(!burger||!nav) return;
+      function close(){ burger.classList.remove('open'); nav.classList.remove('open'); }
+      burger.addEventListener('click', function(e){
+        e.stopPropagation();
+        burger.classList.toggle('open');
+        nav.classList.toggle('open');
+      });
+      nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+      document.addEventListener('click', function(e){
+        if(nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)) close();
+      });
+    })();
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+    window.addEventListener('scroll', function(){
+      document.body.classList.toggle('scrolled', window.scrollY > window.innerHeight - 90);
+    });
+
+    (function(){
+      var canvas=document.getElementById('net'); if(!canvas) return;
+      var ctx=canvas.getContext('2d'); var w,h,dpr,parts=[],raf=null,running=false;
+      var COLOR='255,255,255', LINK=140;
+      function size(){dpr=Math.min(window.devicePixelRatio||1,2);var r=canvas.parentElement.getBoundingClientRect();w=r.width;h=r.height;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);}
+      function make(){var count=Math.min(Math.floor(w*h/11000),100);parts=[];for(var i=0;i<count;i++){parts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.34,vy:(Math.random()-.5)*.34,r:Math.random()*1.7+0.8});}}
+      function frame(move){ctx.clearRect(0,0,w,h);var i,j,a,b,dx,dy,d;if(move){for(i=0;i<parts.length;i++){a=parts[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;}}for(i=0;i<parts.length;i++){for(j=i+1;j<parts.length;j++){a=parts[i];b=parts[j];dx=a.x-b.x;dy=a.y-b.y;d=Math.sqrt(dx*dx+dy*dy);if(d<LINK){ctx.strokeStyle='rgba('+COLOR+','+(0.16*(1-d/LINK))+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}}for(i=0;i<parts.length;i++){a=parts[i];ctx.fillStyle='rgba('+COLOR+',.75)';ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,Math.PI*2);ctx.fill();}}
+      function loop(){frame(true);raf=requestAnimationFrame(loop);}
+      function start(){if(running)return;running=true;loop();}
+      function stop(){running=false;if(raf)cancelAnimationFrame(raf);raf=null;}
+      function build(){size();make();if(reduce){frame(false);}else{stop();start();}}
+      build();
+      var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){stop();build();},200);});
+      if(!reduce){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){start();}else{stop();}});},{threshold:0}).observe(canvas.parentElement);document.addEventListener('visibilitychange',function(){if(document.hidden){stop();}else{start();}});}
+    })();
+  </script>
+</body>
+</html>
